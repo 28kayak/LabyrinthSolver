@@ -1,6 +1,5 @@
 package test;
 
-//import Room;
 
 import java.awt.Color;
 public class Room
@@ -8,10 +7,10 @@ public class Room
 	int locationx;
 	int locationy;
 	int roomId;
-	Room north;
-	Room east;
-	Room south;
-	Room west;
+	boolean north;
+	boolean east;
+	boolean south;
+	boolean west;
 	Color floorCol;
 	public Room()
 	{
@@ -25,30 +24,30 @@ public class Room
 	{
 		this.locationy = locationy;
 	}
-	void setNorthRoom(Room north)
+	void setNorthRoom(boolean north)
 	{
 		this.north = north;
 	}
-	void setEastRoom(Room east)
+	void setEastRoom(boolean east)
 	{
 		this.east = east;
 	}
-	void setWestRoom(Room west)
+	void setWestRoom(boolean west)
 	{
 		this.west = west;
 	}
-	void setSouthRoom(Room south)
+	void setSouthRoom(boolean south)
 	{
 		this.south = south;
 	}
-	int[] getLocationbyRoomId(int roomid)
+	int[] getLocationbyRoom(int roomid)
 	{
 		int[] coordinate = new int[2];
 		coordinate[0] = this.locationx;
 		coordinate[1] = this.locationy;
 		return coordinate;
 	}
-	int getRoomIdbyLocation(int locationx, int locationy)
+	int getRoombyLocation(int locationx, int locationy)
 	{
 		int returnedID;
 		if(this.locationx == locationx && this.locationy == locationy)
@@ -61,7 +60,7 @@ public class Room
 		}
 		return returnedID;
 	}
-	void changeFloorColor()
+	void changeColor()
 	{
 		floorCol = Color.MAGENTA;
 	}
@@ -82,19 +81,19 @@ public class Room
 	{
 		return roomId;
 	}
-	Room getNorthRoom()
+	boolean getNorthRoom()
 	{
 		return north;
 	}
-	Room getEastRoom()
+	boolean getEastRoom()
 	{
 		return east;
 	}
-	Room getSouthRoom()
+	boolean getSouthRoom()
 	{
 		return south;
 	}
-	Room getWestRoom()
+	boolean getWestRoom()
 	{
 		return west;
 	}
